@@ -45,7 +45,7 @@ NSString* INFO_VOLUME_CHANGED = @"(NATIVE AUDIO) Volume changed.";
     }
     [session setCategory:AVAudioSessionCategoryAmbient
                   withOptions:AVAudioSessionCategoryOptionMixWithOthers
-                        error:&setCategoryError]
+                        error:&setCategoryError];
     [session setActive: YES error: nil];
     //[session setCategory:AVAudioSessionCategoryPlayback withOptions:AVAudioSessionCategoryOptionDuckOthers|AVAudioSessionCategoryOptionDefaultToSpeaker|AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers|AVAudioSessionCategoryOptionAllowBluetooth error:nil];
 }
