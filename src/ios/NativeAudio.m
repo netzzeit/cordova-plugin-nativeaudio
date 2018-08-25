@@ -43,9 +43,11 @@ NSString* INFO_VOLUME_CHANGED = @"(NATIVE AUDIO) Volume changed.";
         NSLog (@"Error setting audio session category.");
         return;
     }
-
+    [session setCategory:AVAudioSessionCategoryAmbient
+                  withOptions:AVAudioSessionCategoryOptionMixWithOthers
+                        error:&setCategoryError]
     [session setActive: YES error: nil];
-    [session setCategory:AVAudioSessionCategoryPlayback withOptions:AVAudioSessionCategoryOptionDuckOthers|AVAudioSessionCategoryOptionDefaultToSpeaker|AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers|AVAudioSessionCategoryOptionAllowBluetooth error:nil];
+    //[session setCategory:AVAudioSessionCategoryPlayback withOptions:AVAudioSessionCategoryOptionDuckOthers|AVAudioSessionCategoryOptionDefaultToSpeaker|AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers|AVAudioSessionCategoryOptionAllowBluetooth error:nil];
 }
 
 - (void) parseOptions:(NSDictionary*) options
